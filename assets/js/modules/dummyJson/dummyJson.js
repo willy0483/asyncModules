@@ -15,8 +15,8 @@ export async function getAllProducts() {
 }
 
 // getSingleProduct
-export async function getSingleProduct() {
-  return fetch("https://dummyjson.com/products/1")
+export async function getSingleProduct(id) {
+  return fetch(`https://dummyjson.com/products/${id}`)
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
       return response.json();
