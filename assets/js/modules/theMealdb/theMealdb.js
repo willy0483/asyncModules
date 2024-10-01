@@ -31,8 +31,8 @@ export async function getMealByFirstLetter() {
 }
 
 // Lookup full meal details by id
-export async function getMealById() {
-  return fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772")
+export async function getMealById(id) {
+  return fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
       return response.json();
@@ -130,7 +130,7 @@ export async function filterByCategory() {
 
 // Filter by Area
 export async function filterByArea() {
-  return fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+  return fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian")
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
       return response.json();
